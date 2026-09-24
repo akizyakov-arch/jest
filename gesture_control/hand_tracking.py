@@ -46,7 +46,7 @@ class MediaPipeHandTracker:
 
     def __init__(self, model_path: Path, num_hands: int = 2,
                  detection_confidence: float = 0.5, presence_confidence: float = 0.5,
-                 tracking_confidence: float = 0.5, image_scale: float = 1.0):
+                 tracking_confidence: float = 0.5, image_scale: float = 0.8):
         # MediaPipe imports matplotlib transitively; keep its cache writable in
         # portable/restricted environments and honor explicit user overrides.
         os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "gesture-control-matplotlib"))
@@ -71,11 +71,22 @@ class MediaPipeHandTracker:
         self._landmarker = mp.tasks.vision.HandLandmarker.create_from_options(options)
         self._last_timestamp_ms = -1
 
+    def _effective_scale(self, frame: CameraFrame) -> float:
+        scale = float(getattr(self, '_image_scale', 1.0))
+        if scale <= 0:
+            return 1.0
+        # Aggressive but safe default: large full-HD inputs are resized early to reduce HandLandmarker cost.
+        if frame.width * frame.height >= 1280 * 720:
+            return min(scale, 0.75)
+        if frame.width * frame.height >= 960 * 540:
+            return min(scale, 0.85)
+        return scale
+
     def _prepare_image(self, frame: CameraFrame):
         import numpy as np
 
         rgb = np.frombuffer(frame.pixels, dtype=np.uint8).reshape(frame.height, frame.width, 3)
-        scale = getattr(self, '_image_scale', 1.0)
+        scale = self._effective_scale(frame)
         cv2 = getattr(self, '_cv2', None)
         if scale < 1.0 and cv2 is not None:
             target_w = max(1, int(round(frame.width * scale)))

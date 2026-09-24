@@ -100,16 +100,22 @@ class TrackingRuntime:
         previous_done = None
         fps = 0.0
         skipped = 0
+        max_pending_frames = 2
         try:
             if self.tracker_factory is not None:
                 start = monotonic()
                 self.tracker = self.tracker_factory()
-                log.info('tracker_ready elapsed_ms=%.0f', (monotonic()-start)*1000)
+                log.info('tracker_ready elapsed_ms=%.0f', (monotonic() - start) * 1000)
             while not self.stopped.is_set():
                 new_version, value = self.frames.read(version)
                 if value is None or self.stopped.is_set():
                     continue
-                skipped += max(0, new_version - version - 1)
+                stale = max(0, new_version - version - 1)
+                if stale > max_pending_frames:
+                    version = new_version
+                    skipped += stale
+                    continue
+                skipped += stale
                 version = new_version
                 frame, capture_fps = value
                 start = monotonic()

@@ -57,6 +57,10 @@ class OpenCVCamera:
             capture.set(cv2.CAP_PROP_FRAME_WIDTH, self.width)
             capture.set(cv2.CAP_PROP_FRAME_HEIGHT, self.height)
             capture.set(cv2.CAP_PROP_FPS, self.fps)
+            try:
+                capture.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+            except Exception:
+                pass
             self._capture = capture
             log.info('camera_opened index=%d backend=%s open_ms=%.0f configure_ms=%.0f',
                      self.index, capture.getBackendName(), (opened-started)*1000,
