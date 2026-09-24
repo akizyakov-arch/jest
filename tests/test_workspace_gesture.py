@@ -53,6 +53,15 @@ class WorkspaceComfortTests(TestCase):
             self.assertIsNone(gesture.update(triple_hand(),
                 (.5+.002*(-1)**i, .5+.003*(-1)**i), 1+i/60, 640, 480))
 
+    def test_ready_gesture_requires_small_motion_before_action(self):
+        gesture = WorkspaceGesture(Settings())
+        h = triple_hand()
+        for i in range(26):
+            gesture.update(h, (.5, .5), .5+i/60, 640, 480)
+        self.assertTrue(gesture.ready)
+        self.assertIsNone(gesture.update(h, (.5, .5), 1.0, 640, 480))
+        self.assertIsNotNone(gesture.update(h, (.5, .42), 1.1, 640, 480))
+
     def test_open_thumb_navigation_does_not_fire(self):
         gesture = WorkspaceGesture(Settings())
         for i in range(90):

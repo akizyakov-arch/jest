@@ -136,6 +136,11 @@ class CursorOverlay:
             self.secondary.position = position
             self.secondary.update(state if position is not None else 'OFF', action)
 
+    def screen_point(self, native):
+        if self.position is None:
+            return None
+        return native._screen().pixels(self.position)
+
     def visible(self, now):
         if self.mode == 'OFF' or now-self.updated_at > .3:
             return False
@@ -209,10 +214,11 @@ class CursorOverlay:
                             return
                         state, action = self.state
                         point = Point()
-                        if self.external or self.position is not None:
-                            valid = self.position is not None
-                            if valid:
-                                point.x, point.y = native._screen().pixels(self.position)
+                        if self.position is not None:
+                            valid = True
+                            point.x, point.y = self.screen_point(native)
+                        elif self.external:
+                            valid = False
                         else:
                             valid = bool(user.GetCursorPos(ct.byref(point)))
                         if not self.visible(monotonic()) or not valid:

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gesture-control"
-version = "0.1.0.dev42"
+version = "0.2.1"
 description = "Local gesture control for Windows"
 requires-python = ">=3.11"
 dependencies = []

@@ -1,6 +1,8 @@
 import math
 import unittest
 from time import monotonic
+from types import SimpleNamespace
+from unittest.mock import patch
 
 from gesture_control.cursor_overlay import CENTER, CursorOverlay, rune_strokes
 from gesture_control.events import CommandEvent, CommandType
@@ -120,3 +122,31 @@ class OverlayGeometryTests(unittest.TestCase):
         overlay.update('PAUSED', '-')
         self.assertEqual(overlay.state, ('PAUSED', '-'))
         overlay.close()
+
+    def test_secondary_overlay_without_position_stays_hidden(self):
+        overlay = CursorOverlay('FULL', external=True)
+        overlay.update('ACTIVE', 'SECONDARY_LEFT_CLICK')
+        self.assertIsNone(overlay.screen_point(SimpleNamespace(_screen=lambda: None)))
+        overlay.position = (.5, .5)
+        native = SimpleNamespace(_screen=lambda: SimpleNamespace(pixels=lambda point: (320, 240)))
+        self.assertEqual(overlay.screen_point(native), (320, 240))
+
+    def test_app_demo_entrypoint_runs_cleanly(self):
+        from gesture_control.app import main
+        self.assertEqual(main(['--demo']), 0)
+
+    def test_app_preview_and_control_entrypoints_dispatch_cleanly(self):
+        from gesture_control.app import main
+        with patch('gesture_control.preview.run_preview', return_value=0) as preview, \
+             patch('gesture_control.desktop_ui.run_desktop', return_value=0) as desktop:
+            self.assertEqual(main(['--preview', '--headless', '--max-frames', '2']), 0)
+            self.assertEqual(main(['--control', '--max-frames', '2']), 0)
+            self.assertEqual(main(['--gui']), 0)
+            self.assertEqual(preview.call_count, 2)
+            self.assertEqual(desktop.call_count, 1)
+
+    def test_app_download_model_entrypoint_calls_download(self):
+        from gesture_control.app import main
+        with patch('gesture_control.model_assets.download_model', return_value='model.task') as download:
+            self.assertEqual(main(['--download-model']), 0)
+            download.assert_called_once()
