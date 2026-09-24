@@ -1,0 +1,18 @@
+{
+  "z": 14,
+  "x": 9987,
+  "y": 5753,
+  "span": 1,
+  "bounds": [
+    39.44091796875,
+    47.12995075666306,
+    39.462890625,
+    47.14489748555397
+  ],
+  "center": [
+    39.451904296875,
+    47.137424646293844
+  ],
+  "projection": "EPSG:3857",
+  "geometryStatus": "Artistic detail study; generated features not surveyed"
+}

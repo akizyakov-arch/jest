@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "creative-3d",
+  "name": "3D template",
+  "template": true,
+  "applications": [],
+  "bindings": {
+    "POINT": "POINTER", "PINCH": "SELECT", "DRAG": "TRANSLATE",
+    "SCROLL": "ZOOM", "FIST": "CANCEL", "TWO_HAND_ZOOM": "ZOOM",
+    "TWO_HAND_ROTATE": "ROTATE"
+  }
+}

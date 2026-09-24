@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "desktop",
+  "name": "Desktop",
+  "template": false,
+  "applications": [],
+  "bindings": {
+    "TWO_FINGERS": "MIDDLE_SELECT",
+    "FOUR_SWIPE_UP": "TASK_VIEW", "FOUR_SWIPE_DOWN": "SHOW_DESKTOP",
+    "POINT": "POINTER", "PINCH": "SELECT", "PINCH_RIGHT": "CONTEXT_MENU", "DRAG": "DRAG",
+    "SCROLL": "SCROLL", "FIST": "CANCEL", "DOUBLE_PINCH": "DOUBLE_SELECT",
+    "THREE_SWIPE_LEFT": "PREVIOUS_APP", "THREE_SWIPE_RIGHT": "NEXT_APP",
+    "TWO_HAND_ZOOM": "ZOOM"
+  }
+}

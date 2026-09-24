@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "creative-video",
+  "name": "Video template",
+  "template": true,
+  "applications": [],
+  "bindings": {
+    "POINT": "POINTER", "PINCH": "SELECT", "DRAG": "SCRUB",
+    "SCROLL": "SCROLL", "FIST": "CANCEL", "DOUBLE_PINCH": "PLAY_PAUSE",
+    "TWO_HAND_ZOOM": "ZOOM"
+  }
+}

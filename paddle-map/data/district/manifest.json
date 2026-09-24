@@ -1,0 +1,7 @@
+{
+  "columns": 4,
+  "rows": 4,
+  "core": 1024,
+  "overlap": 64,
+  "guideOnly": true
+}

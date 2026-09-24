@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" class="rune-hud">
+<defs>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <style>
+    :root{--c:#28b8ff;--c2:#83edff}
+    .line{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+    .thin{fill:none;stroke:var(--c2);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+    .dim{opacity:.34}.g{filter:url(#glow)}
+
+    .outer{transform-origin:320px 320px;animation:cw 18s linear infinite}
+    .mid{transform-origin:320px 320px;animation:ccw 11s linear infinite}
+    .inner{transform-origin:320px 320px;animation:cw 7s linear infinite}
+    .orbit{transform-origin:320px 320px;animation:cw 4.8s linear infinite}
+    .core{transform-origin:320px 320px;animation:pulse 2.6s ease-in-out infinite}
+    .click{fill:none;stroke:var(--c2);stroke-width:2;opacity:0;transform-origin:320px 320px}
+
+    .rune-hud.is-active .outer{animation-duration:9s}
+    .rune-hud.is-active .mid{animation-duration:5.5s}
+    .rune-hud.is-active .inner{animation-duration:3.8s}
+
+    .rune-hud.is-drag .outer{animation-duration:4s}
+    .rune-hud.is-drag .mid{animation-duration:2.8s}
+    .rune-hud.is-drag .inner{animation-duration:2s}
+    .rune-hud.is-drag .core{transform:scale(1.045)}
+
+    .rune-hud.is-click .click{animation:click .45s ease-out 1}
+
+    .rune-hud.is-paused .outer,
+    .rune-hud.is-paused .mid,
+    .rune-hud.is-paused .inner,
+    .rune-hud.is-paused .orbit,
+    .rune-hud.is-paused .core{
+      animation-play-state:paused;
+      opacity:.42;
+    }
+
+    @keyframes cw{to{transform:rotate(360deg)}}
+    @keyframes ccw{to{transform:rotate(-360deg)}}
+    @keyframes pulse{
+      0%,100%{opacity:.86;transform:scale(1)}
+      50%{opacity:1;transform:scale(1.025)}
+    }
+    @keyframes click{
+      0%{opacity:.9;transform:scale(.65)}
+      100%{opacity:0;transform:scale(1.45)}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .outer,.mid,.inner,.orbit,.core{animation:none!important}
+    }
+  </style>
+</defs>
+
+<circle cx="320" cy="320" r="215" fill="#0d79c0" opacity=".035"/>
+
+<!-- outer mechanics -->
+<g class="outer g">
+  <circle cx="320" cy="320" r="246" class="line dim" stroke-dasharray="110 18 36 14 72 20"/>
+  <circle cx="320" cy="320" r="258" class="thin dim" stroke-dasharray="3 9"/>
+  <path class="thin" d="M320 42V76M320 564V598M42 320H76M564 320H598"/>
+</g>
+
+<!-- middle ring -->
+<g class="mid g">
+  <circle cx="320" cy="320" r="216" class="line" stroke-dasharray="48 18 12 14 26 20"/>
+  <circle cx="320" cy="320" r="199" class="thin dim" stroke-dasharray="2 8"/>
+  <path class="thin dim" d="M320 104l8 12-8 12-8-12zM536 320l-12 8-12-8 12-8zM320 536l8-12-8-12-8 12zM104 320l12 8 12-8-12-8z"/>
+</g>
+
+<!-- inner ring -->
+<g class="inner">
+  <circle cx="320" cy="320" r="166" class="thin g" stroke-dasharray="62 26 12 15"/>
+  <circle cx="320" cy="320" r="150" class="thin dim"/>
+  <circle cx="320" cy="320" r="132" class="thin dim" stroke-dasharray="4 10"/>
+</g>
+
+<!-- orbit -->
+<g class="orbit g">
+  <circle cx="320" cy="61" r="5" fill="var(--c2)"/>
+  <path class="thin dim" d="M320 72A248 248 0 0 1 486 136"/>
+</g>
+
+<!-- central rune -->
+<g class="core g">
+  <path class="line" d="M320 214V426M320 270L264 226M320 270L376 226"/>
+  <path class="thin" d="M264 226V252L294 278M376 226V252L346 278"/>
+  <path class="line" d="M320 302L344 326 320 350 296 326Z"/>
+  <path class="thin" d="M320 350L296 374V404M320 350L344 374V404"/>
+  <circle cx="320" cy="270" r="6" class="thin"/>
+  <circle cx="320" cy="326" r="4" fill="var(--c2)"/>
+  <circle cx="320" cy="426" r="4" fill="var(--c2)"/>
+</g>
+
+<!-- alignment -->
+<g class="thin dim">
+  <path d="M320 136V164M320 476V504M136 320H164M476 320H504"/>
+</g>
+
+<!-- click ripple -->
+<circle class="click g" cx="320" cy="320" r="86"/>
+</svg>

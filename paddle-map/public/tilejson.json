@@ -1,0 +1,80 @@
+{
+  "tilejson": "3.0.0",
+  "name": "PADDLE · Don Delta",
+  "description": "Azov / Yelizavetinskaya — OSM vector sample",
+  "scheme": "xyz",
+  "tiles": [
+    "./tiles/{z}/{x}/{y}.pbf"
+  ],
+  "minzoom": 9,
+  "maxzoom": 15,
+  "bounds": [
+    39.27,
+    47.065,
+    39.57,
+    47.255
+  ],
+  "center": [
+    39.455,
+    47.142,
+    13.4
+  ],
+  "attribution": "© OpenStreetMap contributors",
+  "vector_layers": [
+    {
+      "id": "water",
+      "fields": {
+        "kind": "String",
+        "name": "String",
+        "osm_id": "String"
+      }
+    },
+    {
+      "id": "landcover",
+      "fields": {
+        "kind": "String",
+        "name": "String",
+        "osm_id": "String"
+      }
+    },
+    {
+      "id": "waterway",
+      "fields": {
+        "kind": "String",
+        "name": "String",
+        "osm_id": "String"
+      }
+    },
+    {
+      "id": "transportation",
+      "fields": {
+        "kind": "String",
+        "name": "String",
+        "osm_id": "String"
+      }
+    },
+    {
+      "id": "building",
+      "fields": {
+        "kind": "String",
+        "name": "String",
+        "osm_id": "String"
+      }
+    },
+    {
+      "id": "place",
+      "fields": {
+        "kind": "String",
+        "name": "String",
+        "osm_id": "String"
+      }
+    },
+    {
+      "id": "canopy",
+      "fields": {
+        "tone": "Number",
+        "density": "Number"
+      }
+    }
+  ]
+}

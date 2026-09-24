@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<rect width="1440" height="900" fill="#07111B"/>
+<defs>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <style>
+    .t{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#ECF7FF}
+    .m{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#8196A7}
+    .a{fill:#0D2232;stroke:#17384E;stroke-width:1.4}
+    .card{fill:#0A1924;stroke:#17384E;stroke-width:1.3}
+    .blue{fill:#55CFFF}
+    .line{stroke:#55CFFF;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+</defs>
+<text x="92" y="72" class="t" font-size="30" font-weight="700">01 · Главный экран</text>
+<text x="92" y="103" class="m" font-size="15" letter-spacing="2">GESTURE CONTROL · UX/UI WIREFRAME</text>
+
+<rect x="28" y="135" width="72" height="650" rx="24" class="a"/>
+<rect x="38" y="160" width="52" height="52" rx="16" fill="#12314A" stroke="#55CFFF"/>
+<text x="64" y="194" text-anchor="middle" class="t" font-size="22">◉</text>
+<text x="64" y="286" text-anchor="middle" class="t" font-size="22">☝</text>
+<text x="64" y="378" text-anchor="middle" class="t" font-size="22">▣</text>
+<text x="64" y="470" text-anchor="middle" class="t" font-size="22">⌘</text>
+<text x="64" y="562" text-anchor="middle" class="t" font-size="22">⚙</text>
+<rect x="126" y="135" width="905" height="650" rx="28" class="a"/>
+<rect x="1050" y="135" width="362" height="650" rx="28" class="a"/>
+<text x="164" y="184" class="m" font-size="13" letter-spacing="2">СТАТУС СИСТЕМЫ</text>
+<text x="164" y="222" class="t" font-size="34" font-weight="700">Управление руками</text>
+<circle cx="848" cy="198" r="7" fill="#55CFFF" filter="url(#glow)"/>
+<text x="867" y="204" class="t" font-size="15" font-weight="700">ACTIVE</text>
+<rect x="920" y="169" width="86" height="56" rx="18" fill="#12314A" stroke="#55CFFF" stroke-width="1.5"/>
+<text x="942" y="200" class="t" font-size="16" font-weight="700">Пауза</text>
+
+<rect x="164" y="260" width="830" height="350" rx="26" class="card"/>
+<circle cx="579" cy="430" r="138" class="line" opacity="0.45" stroke-dasharray="8 9"/>
+<circle cx="579" cy="430" r="108" class="line" opacity="0.9" />
+<circle cx="579" cy="430" r="78" class="line" opacity="0.45" stroke-dasharray="4 8"/>
+<path d="M579 368V492 M579 405L539 372 M579 405L619 372 M579 435L597 453L579 471L561 453Z" class="line" filter="url(#glow)"/>
+<rect x="488" y="560" width="182" height="34" rx="17.0" fill="#12314A" stroke="#55CFFF"/>
+<text x="579.0" y="582.0" text-anchor="middle" class="t" font-size="14" font-weight="600">☝ POINTER · 96%</text>
+<rect x="164" y="632" width="255" height="92" rx="18" fill="#0B1B27" stroke="#17384E" stroke-width="1.5"/>
+<text x="186" y="663" class="t" font-size="16" font-weight="700">☝ Pointer</text>
+<text x="186" y="687" class="m" font-size="13">Наведение и курсор</text>
+<rect x="451" y="632" width="255" height="92" rx="18" fill="#0B1B27" stroke="#17384E" stroke-width="1.5"/>
+<text x="473" y="663" class="t" font-size="16" font-weight="700">🤏 Pinch</text>
+<text x="473" y="687" class="m" font-size="13">Клик и drag</text>
+<rect x="739" y="632" width="255" height="92" rx="18" fill="#0B1B27" stroke="#17384E" stroke-width="1.5"/>
+<text x="761" y="663" class="t" font-size="16" font-weight="700">✌ Scroll</text>
+<text x="761" y="687" class="m" font-size="13">Прокрутка</text>
+<text x="1080" y="184" class="t" font-size="17" font-weight="700">Visual FX</text>
+<rect x="1080" y="205" width="88" height="42" rx="21.0" fill="#12314A" stroke="#55CFFF"/>
+<text x="1124.0" y="231.0" text-anchor="middle" class="t" font-size="14" font-weight="600">Full</text>
+<rect x="1176" y="205" width="88" height="42" rx="21.0" fill="#0B1B27" stroke="#17384E"/>
+<text x="1220.0" y="231.0" text-anchor="middle" class="t" font-size="14" font-weight="600">Minimal</text>
+<rect x="1272" y="205" width="88" height="42" rx="21.0" fill="#0B1B27" stroke="#17384E"/>
+<text x="1316.0" y="231.0" text-anchor="middle" class="t" font-size="14" font-weight="600">Off</text>
+<text x="1080" y="293" class="t" font-size="17" font-weight="700">Чувствительность</text>
+<text x="1080" y="334" class="m" font-size="14">Курсор</text>
+<line x1="1080" y1="360" x2="1360" y2="360" stroke="#17384E" stroke-width="8" stroke-linecap="round"/>
+<line x1="1080" y1="360" x2="1250" y2="360" stroke="#55CFFF" stroke-width="8" stroke-linecap="round"/>
+<circle cx="1250" cy="360" r="11" fill="#ECF7FF"/>
+<text x="1080" y="420" class="m" font-size="14">Сглаживание</text>
+<line x1="1080" y1="446" x2="1360" y2="446" stroke="#17384E" stroke-width="8" stroke-linecap="round"/>
+<line x1="1080" y1="446" x2="1215" y2="446" stroke="#55CFFF" stroke-width="8" stroke-linecap="round"/>
+<circle cx="1215" cy="446" r="11" fill="#ECF7FF"/>
+<rect x="1080" y="686" width="280" height="66" rx="18" fill="#36161B" stroke="#A73E49" stroke-width="1.5"/>
+<text x="1102" y="717" class="t" font-size="16" font-weight="700">Отключить управление</text>
+<text x="1102" y="741" class="m" font-size="13">Ctrl + Alt + G</text>
+</svg>

@@ -1,0 +1,9 @@
+[out:json][timeout:60][maxsize:134217728];(
+  way["natural"~"^(water|wood|scrub|wetland|grassland|sand|beach)$"](47.045,39.24,47.275,39.60);
+  relation["natural"~"^(water|wood|scrub|wetland|grassland|sand|beach)$"](47.045,39.24,47.275,39.60);
+  way["landuse"](47.045,39.24,47.275,39.60);relation["landuse"](47.045,39.24,47.275,39.60);
+  way["waterway"](47.045,39.24,47.275,39.60);relation["waterway"="riverbank"](47.045,39.24,47.275,39.60);
+  way["highway"](47.045,39.24,47.275,39.60);way["railway"="rail"](47.045,39.24,47.275,39.60);
+  way["building"](47.045,39.24,47.275,39.60);relation["building"](47.045,39.24,47.275,39.60);
+  node["place"~"^(city|town|village|hamlet|suburb|locality)$"](47.045,39.24,47.275,39.60);
+);out body;>;out skel qt;

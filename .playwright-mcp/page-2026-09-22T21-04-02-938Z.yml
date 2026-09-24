@@ -1,0 +1,26 @@
+- main [ref=f7e3]:
+  - generic "Интерактивная векторная карта дельты Дона" [ref=f7e4]
+  - generic:
+    - link "Paddle — общий вид" [ref=f7e5] [cursor=pointer]:
+      - /url: "#"
+      - generic [ref=f7e6]: PADDLE
+      - generic [ref=f7e9]: БЛИЖЕ К ВОДЕ
+    - generic [ref=f7e10]:
+      - generic [ref=f7e11]: Векторная карта
+      - button "Слои и информация" [ref=f7e13] [cursor=pointer]
+  - generic:
+    - generic: РОСТОВСКАЯ ОБЛАСТЬ
+    - heading "Там, где Дон становится дельтой." [level=1]: Там, где Донстановится дельтой.
+    - paragraph: Острова, ерики и большие водные просторы.
+    - generic: Азов · Елизаветинская
+  - generic [ref=f7e16]:
+    - button "Приблизить" [disabled] [ref=f7e17]
+    - button "Отдалить" [disabled] [ref=f7e20]
+    - button "Вернуть общий вид" [disabled] [ref=f7e23]
+  - generic:
+    - generic "Участки карты" [ref=f7e26]:
+      - button "Дельта Дона" [disabled] [ref=f7e27]
+      - button "Елизаветинская" [disabled] [ref=f7e31]
+      - button "Азов" [disabled] [ref=f7e33]
+    - generic: Пробный участок · масштаб 13.4
+  - status [ref=f7e35]: Открываем дельту Дона…

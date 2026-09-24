@@ -1,0 +1,24 @@
+- main [ref=f3e3]:
+  - generic "Детальный участок карты, вид сверху" [ref=f3e4]
+  - generic:
+    - generic [ref=f3e5]:
+      - generic [ref=f3e6]: PADDLE
+      - generic [ref=f3e9]: ОБЪЁМ В ДЕТАЛЯХ
+    - button "Настройки детализации" [ref=f3e10] [cursor=pointer]
+  - generic [ref=f3e13]:
+    - text: Коррекция стыков и берегов
+    - generic [ref=f3e14]: Вид сверху · 14.0
+  - generic [ref=f3e15]:
+    - button "Приблизить" [disabled] [ref=f3e16]
+    - button "Отдалить" [disabled] [ref=f3e19]
+    - button "Повернуть влево" [disabled] [ref=f3e22]
+    - button "Повернуть вправо" [disabled] [ref=f3e25]
+  - generic [ref=f3e28]:
+    - generic [ref=f3e29]:
+      - button "Общий вид" [disabled] [ref=f3e30]
+      - button "Ближе к берегу" [disabled] [ref=f3e31]
+    - generic [ref=f3e32]:
+      - button "До коррекции" [disabled] [ref=f3e33]
+      - button "После коррекции" [disabled] [pressed] [ref=f3e34]
+    - generic [ref=f3e35]: Детальные берега · поворот без наклона
+  - status [ref=f3e36]: Загружаем детальный участок…

@@ -1,0 +1,21 @@
+{
+  "name": "paddle-don-vector-map",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data:fetch": "node scripts/fetch-osm.mjs",
+    "tiles:build": "node scripts/build-tiles.mjs",
+    "style:build": "node scripts/build-style.mjs",
+    "verify": "node scripts/verify.mjs",
+    "dev": "npm --prefix viewer run dev -- --host 127.0.0.1 --port 4173"
+  },
+  "dependencies": {
+    "@mapbox/vector-tile": "2.0.4",
+    "@maplibre/maplibre-gl-style-spec": "^24.0.0",
+    "geojson-vt": "5.0.2",
+    "osmtogeojson": "3.0.0-beta.5",
+    "pbf": "4.0.1",
+    "sharp": "^0.35.4",
+    "vt-pbf": "3.1.3"
+  }
+}

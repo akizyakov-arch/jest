@@ -1,0 +1,13 @@
+{
+  "projection": "EPSG:3857",
+  "scheme": "xyz",
+  "z": 14,
+  "x": 9985,
+  "y": 5752,
+  "span": 4,
+  "sourcePixels": 2048,
+  "bounds": [39.39697265625,47.10004469402519,39.48486328125,47.15984001304431],
+  "center": [39.44091796875,47.12995075666306],
+  "geometryStatus": "Generated image approximately aligned to source; not navigation-validated",
+  "attribution": "Geographic layout © OpenStreetMap contributors; artistic surface generated with ImageGen"
+}

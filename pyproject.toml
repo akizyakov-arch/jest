@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gesture-control"
+version = "0.1.0.dev42"
+description = "Local gesture control for Windows"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+cv = ["mediapipe==1.0.1", "opencv-contrib-python==5.0.0.93", "pillow==12.3.0", "cv2-enumerate-cameras==1.3.3", "pystray==0.19.5"]
+
+[project.scripts]
+gesture-control = "gesture_control.app:main"
+
+[tool.setuptools.packages.find]
+include = ["gesture_control*"]
+
+[tool.setuptools.package-data]
+gesture_control = ["models/*.task", "models/*.md", "profiles/*.json", "assets/*.svg"]

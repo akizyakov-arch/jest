@@ -1,0 +1,12 @@
+- main [ref=f24e3]:
+  - generic [ref=f24e4]:
+    - generic [ref=f24e5]:
+      - strong [ref=f24e6]: PADDLE
+      - generic [ref=f24e7]: Мобильный предпросмотр
+    - link "На весь экран ↗" [ref=f24e8] [cursor=pointer]:
+      - /url: /?district=1
+  - generic [ref=f24e9]:
+    - button "iOS · 390 × 844" [pressed] [ref=f24e10] [cursor=pointer]
+    - button "Android · 412 × 915" [ref=f24e11] [cursor=pointer]
+  - iframe [ref=f24e13]
+  - paragraph [ref=f24e14]: Предпросмотр в браузере. Вид сверху; поворот — кнопками на карте.Это проверка размеров экрана, а не нативных SDK iOS и Android.

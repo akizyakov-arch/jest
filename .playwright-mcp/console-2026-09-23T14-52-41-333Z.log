@@ -1,0 +1,35 @@
+[      35ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:4174/?token=MVE6C-p7wBLm' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4174/@vite/client:801
+[      50ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:4174/?token=MVE6C-p7wBLm' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4174/@vite/client:814
+[      50ms] [ERROR] [vite] failed to connect to websocket.
+your current setup:
+  (browser) 127.0.0.1:4174/ <--[HTTP]--> 127.0.0.1:4174/ (server)
+  (browser) 127.0.0.1:4174/ <--[WebSocket (failing)]--> 127.0.0.1:4174/ (server)
+Check out your Vite / network configuration and https://vite.dev/config/server-options.html#server-hmr . @ http://127.0.0.1:4174/@vite/client:829
+[     257ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:20102
+[    1167ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4174/style-district.json:0
+[    1167ms] [ERROR] TypeError: Failed to fetch
+    at fetchCallImpl (http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=f0qDUVqj2CveaRCLqh9eNIuH0yhgLG3sCAkMnUY4Li508AffjQZ6EQBpYdP7lMtM1iNzDnPGGT6AJspdGJcOwg:5747:21)
+    at fetch (http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=f0qDUVqj2CveaRCLqh9eNIuH0yhgLG3sCAkMnUY4Li508AffjQZ6EQBpYdP7lMtM1iNzDnPGGT6AJspdGJcOwg:5753:60)
+    at json (http://127.0.0.1:4174/src/DetailView.jsx?t=1790153911274:18:27)
+    at http://127.0.0.1:4174/src/DetailView.jsx?t=1790153911274:22:18
+    at Object.react_stack_bottom_frame (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:18567:20)
+    at runWithFiberInDEV (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:997:72)
+    at commitHookEffectListMount (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:9411:163)
+    at commitHookPassiveMountEffects (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:9465:60)
+    at commitPassiveMountOnFiber (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:11040:29)
+    at recursivelyTraversePassiveMountEffects (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:11010:13) @ http://127.0.0.1:4174/src/DetailView.jsx?t=1790153911274:58
+[    1168ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4174/district/stats.json:0
+[    1168ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4174/style-district.json:0
+[    1168ms] [ERROR] TypeError: Failed to fetch
+    at fetchCallImpl (http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=f0qDUVqj2CveaRCLqh9eNIuH0yhgLG3sCAkMnUY4Li508AffjQZ6EQBpYdP7lMtM1iNzDnPGGT6AJspdGJcOwg:5747:21)
+    at fetch (http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=f0qDUVqj2CveaRCLqh9eNIuH0yhgLG3sCAkMnUY4Li508AffjQZ6EQBpYdP7lMtM1iNzDnPGGT6AJspdGJcOwg:5753:60)
+    at json (http://127.0.0.1:4174/src/DetailView.jsx?t=1790153911274:18:27)
+    at http://127.0.0.1:4174/src/DetailView.jsx?t=1790153911274:22:18
+    at Object.react_stack_bottom_frame (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:18567:20)
+    at runWithFiberInDEV (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:997:72)
+    at commitHookEffectListMount (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:9411:163)
+    at commitHookPassiveMountEffects (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:9465:60)
+    at reconnectPassiveEffects (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:11273:13)
+    at recursivelyTraverseReconnectPassiveEffects (http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=c34e933a:11240:11) @ http://127.0.0.1:4174/src/DetailView.jsx?t=1790153911274:58
+[    1168ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4174/district/stats.json:0
+[  142093ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:4174/node_modules/.vite/deps/react-dom_client.js?v=db821fd6:20102

@@ -1,0 +1,14 @@
+{
+  "endpoint": "https://overpass.private.coffee/api/interpreter",
+  "bounds": [
+    39.27,
+    47.065,
+    39.57,
+    47.255
+  ],
+  "fetchedAt": "2026-09-22T20:32:42.599Z",
+  "osmTimestamp": "2026-05-31T22:37:44Z",
+  "elements": 321811,
+  "attribution": "© OpenStreetMap contributors",
+  "license": "https://www.openstreetmap.org/copyright"
+}

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" class="rune-hud">
+<defs>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <style>
+    :root{--c:#28b8ff;--c2:#83edff}
+    .line{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+    .thin{fill:none;stroke:var(--c2);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+    .dim{opacity:.34}.g{filter:url(#glow)}
+    .outer{transform-origin:320px 320px;animation:cw 18s linear infinite}
+    .mid{transform-origin:320px 320px;animation:ccw 11s linear infinite}
+    .inner{transform-origin:320px 320px;animation:cw 7s linear infinite}
+    .runes{transform-origin:320px 320px;animation:ccw 28s linear infinite}
+    .r{transform-box:fill-box;transform-origin:center;animation:cw 28s linear infinite,pulse 3s ease-in-out infinite}
+    .core{transform-origin:320px 320px;animation:pulse2 2.6s ease-in-out infinite}
+    .click{fill:none;stroke:var(--c2);stroke-width:2;opacity:0;transform-origin:320px 320px}
+    .rune-hud.is-active .outer{animation-duration:9s}.rune-hud.is-active .mid{animation-duration:5.5s}.rune-hud.is-active .inner{animation-duration:3.8s}
+    .rune-hud.is-drag .outer{animation-duration:4s}.rune-hud.is-drag .mid{animation-duration:2.8s}.rune-hud.is-drag .inner{animation-duration:2s}
+    .rune-hud.is-click .click{animation:click .45s ease-out 1}
+    .rune-hud.is-paused .outer,.rune-hud.is-paused .mid,.rune-hud.is-paused .inner,.rune-hud.is-paused .runes,.rune-hud.is-paused .r,.rune-hud.is-paused .core{animation-play-state:paused;opacity:.42}
+    @keyframes cw{to{transform:rotate(360deg)}} @keyframes ccw{to{transform:rotate(-360deg)}}
+    @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}} @keyframes pulse2{0%,100%{opacity:.86;transform:scale(1)}50%{opacity:1;transform:scale(1.025)}}
+    @keyframes click{0%{opacity:.9;transform:scale(.65)}100%{opacity:0;transform:scale(1.45)}}
+  </style>
+
+  <g id="wifi"><path class="thin" d="M-14 3Q0-10 14 3M-9 8Q0 0 9 8M-4 13Q0 9 4 13"/><circle cx="0" cy="17" r="2" fill="var(--c2)"/></g>
+  <g id="bt"><path class="thin" d="M0-18V18M0-18L10-9 0 0 10 9 0 18M0 0L-9-8M0 0L-9 8"/></g>
+  <g id="cloud"><path class="thin" d="M-16 10H12Q20 10 20 3Q20-4 13-5Q11-14 2-14Q-7-14-10-7Q-17-7-19 0Q-21 8-16 10Z"/></g>
+  <g id="ai"><rect x="-12" y="-12" width="24" height="24" class="thin"/><circle cx="0" cy="0" r="4" class="thin"/><path class="thin" d="M-16-7H-12M-16 0H-12M-16 7H-12M12-7H16M12 0H16M12 7H16"/></g>
+  <g id="code"><path class="thin" d="M-5-10L-15 0-5 10M5-10L15 0 5 10M2-14L-2 14"/></g>
+  <g id="lock"><rect x="-11" y="-2" width="22" height="18" rx="2" class="thin"/><path class="thin" d="M-7-2V-8Q-7-15 0-15Q7-15 7-8V-2"/><circle cx="0" cy="6" r="2" fill="var(--c2)"/></g>
+  <g id="search"><circle cx="-3" cy="-3" r="9" class="thin"/><path class="thin" d="M4 4L13 13"/></g>
+  <g id="msg"><rect x="-15" y="-10" width="30" height="20" rx="2" class="thin"/><path class="thin" d="M-15-10L0 2 15-10"/></g>
+  <g id="battery"><rect x="-12" y="-14" width="20" height="28" rx="2" class="thin"/><path class="thin" d="M-4-18H0V-14M-7 6H3"/></g>
+  <g id="health"><path class="thin" d="M-15 2H-7L-3-8 3 10 7 2H15"/></g>
+  <g id="nature"><path class="thin" d="M-13 10Q-10-12 13-14Q11 9-8 14ZM-8 14Q0 2 9-8"/></g>
+  <g id="inf"><path class="thin" d="M-18 0C-12-12-2-12 0 0C2 12 12 12 18 0C12-12 2-12 0 0C-2 12-12 12-18 0"/></g>
+</defs>
+
+<circle cx="320" cy="320" r="215" fill="#0d79c0" opacity=".035"/>
+<g class="outer g"><circle cx="320" cy="320" r="246" class="line dim" stroke-dasharray="110 18 36 14 72 20"/><circle cx="320" cy="320" r="258" class="thin dim" stroke-dasharray="3 9"/></g>
+<g class="mid g"><circle cx="320" cy="320" r="216" class="line" stroke-dasharray="48 18 12 14 26 20"/><circle cx="320" cy="320" r="199" class="thin dim" stroke-dasharray="2 8"/></g>
+<g class="inner"><circle cx="320" cy="320" r="166" class="thin g" stroke-dasharray="62 26 12 15"/><circle cx="320" cy="320" r="150" class="thin dim"/></g>
+
+<g class="runes g">
+  <g class="r" transform="translate(320 84)"><use href="#cloud"/></g>
+  <g class="r" transform="translate(438 116)"><use href="#wifi"/></g>
+  <g class="r" transform="translate(524 202)"><use href="#bt"/></g>
+  <g class="r" transform="translate(556 320)"><use href="#ai"/></g>
+  <g class="r" transform="translate(524 438)"><use href="#code"/></g>
+  <g class="r" transform="translate(438 524)"><use href="#search"/></g>
+  <g class="r" transform="translate(320 556)"><use href="#msg"/></g>
+  <g class="r" transform="translate(202 524)"><use href="#battery"/></g>
+  <g class="r" transform="translate(116 438)"><use href="#health"/></g>
+  <g class="r" transform="translate(84 320)"><use href="#lock"/></g>
+  <g class="r" transform="translate(116 202)"><use href="#nature"/></g>
+  <g class="r" transform="translate(202 116)"><use href="#inf"/></g>
+</g>
+
+<g class="core g">
+  <path class="line" d="M320 214V426M320 270L264 226M320 270L376 226"/>
+  <path class="thin" d="M264 226V252L294 278M376 226V252L346 278"/>
+  <path class="line" d="M320 302L344 326 320 350 296 326Z"/>
+  <path class="thin" d="M320 350L296 374V404M320 350L344 374V404"/>
+  <circle cx="320" cy="270" r="6" class="thin"/><circle cx="320" cy="326" r="4" fill="var(--c2)"/><circle cx="320" cy="426" r="4" fill="var(--c2)"/>
+</g>
+
+<g class="thin dim"><path d="M320 136V164M320 476V504M136 320H164M476 320H504"/></g>
+<circle class="click g" cx="320" cy="320" r="86"/>
+</svg>

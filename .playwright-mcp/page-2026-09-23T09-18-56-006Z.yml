@@ -1,0 +1,24 @@
+- main [ref=f30e3]:
+  - generic "Детальный участок карты, вид сверху" [ref=f30e4]
+  - generic:
+    - generic [ref=f30e5]:
+      - generic [ref=f30e6]: PADDLE
+      - generic [ref=f30e9]: ОБЪЁМ В ДЕТАЛЯХ
+    - button "Настройки детализации" [ref=f30e10] [cursor=pointer]
+  - generic [ref=f30e13]:
+    - text: Дельта Дона · весь район
+    - generic [ref=f30e14]: Вид сверху · 14.0
+  - generic [ref=f30e15]:
+    - button "Приблизить" [disabled] [ref=f30e16]
+    - button "Отдалить" [disabled] [ref=f30e19]
+    - button "Повернуть влево" [disabled] [ref=f30e22]
+    - button "Повернуть вправо" [disabled] [ref=f30e25]
+  - generic [ref=f30e28]:
+    - generic [ref=f30e29]:
+      - button "Общий вид" [disabled] [ref=f30e30]
+      - button "Ближе к берегу" [disabled] [ref=f30e31]
+    - generic [ref=f30e32]:
+      - button "Раньше" [disabled] [ref=f30e33]
+      - button "Новые детали" [disabled] [pressed] [ref=f30e34]
+    - generic [ref=f30e35]: Детальные берега · поворот без наклона
+  - status [ref=f30e36]: Загружаем детальный участок…

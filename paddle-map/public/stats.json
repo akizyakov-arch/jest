@@ -1,0 +1,83 @@
+{
+  "bounds": [
+    39.27,
+    47.065,
+    39.57,
+    47.255
+  ],
+  "minzoom": 9,
+  "maxzoom": 15,
+  "counts": {
+    "water": 420,
+    "landcover": 2722,
+    "waterway": 733,
+    "transportation": 6973,
+    "building": 30617,
+    "place": 37,
+    "canopy": 13969
+  },
+  "skippedIncomplete": 0,
+  "tiles": 1018,
+  "rawBytes": 9554411,
+  "gzipBytes": 4759824,
+  "maxGzipTileBytes": 152048,
+  "zooms": [
+    {
+      "z": 9,
+      "tiles": 2,
+      "rawBytes": 211641,
+      "gzipBytes": 100848
+    },
+    {
+      "z": 10,
+      "tiles": 2,
+      "rawBytes": 236661,
+      "gzipBytes": 120333
+    },
+    {
+      "z": 11,
+      "tiles": 6,
+      "rawBytes": 297175,
+      "gzipBytes": 165050
+    },
+    {
+      "z": 12,
+      "tiles": 20,
+      "rawBytes": 764953,
+      "gzipBytes": 396643
+    },
+    {
+      "z": 13,
+      "tiles": 64,
+      "rawBytes": 2607827,
+      "gzipBytes": 1156237
+    },
+    {
+      "z": 14,
+      "tiles": 196,
+      "rawBytes": 2467817,
+      "gzipBytes": 1195574
+    },
+    {
+      "z": 15,
+      "tiles": 728,
+      "rawBytes": 2968337,
+      "gzipBytes": 1625139
+    }
+  ],
+  "generatedAt": "2026-09-22T20:43:48.517Z",
+  "source": {
+    "endpoint": "https://overpass.private.coffee/api/interpreter",
+    "bounds": [
+      39.27,
+      47.065,
+      39.57,
+      47.255
+    ],
+    "fetchedAt": "2026-09-22T20:32:42.599Z",
+    "osmTimestamp": "2026-05-31T22:37:44Z",
+    "elements": 321811,
+    "attribution": "© OpenStreetMap contributors",
+    "license": "https://www.openstreetmap.org/copyright"
+  }
+}
