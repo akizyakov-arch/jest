@@ -38,17 +38,28 @@ class MediaPipeHandTracker:
     IDs are frame-local in this diagnostic stage, not persistent hand identity.
     """
 
+    def __new__(cls, *args, **kwargs):
+        instance = super().__new__(cls)
+        instance._image_scale = 1.0
+        instance._cv2 = None
+        return instance
+
     def __init__(self, model_path: Path, num_hands: int = 2,
                  detection_confidence: float = 0.5, presence_confidence: float = 0.5,
-                 tracking_confidence: float = 0.5):
+                 tracking_confidence: float = 0.5, image_scale: float = 1.0):
         # MediaPipe imports matplotlib transitively; keep its cache writable in
         # portable/restricted environments and honor explicit user overrides.
         os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "gesture-control-matplotlib"))
+        import cv2
         import mediapipe as mp
 
         if not model_path.is_file():
             raise FileNotFoundError(f"Model not found: {model_path}. Run: python -m gesture_control --download-model")
+        if not 0.5 <= image_scale <= 1.0:
+            raise ValueError('image_scale must be in 0.5..1.0')
         self._mp = mp
+        self._cv2 = cv2
+        self._image_scale = float(image_scale)
         options = mp.tasks.vision.HandLandmarkerOptions(
             base_options=mp.tasks.BaseOptions(model_asset_buffer=model_path.read_bytes()),
             running_mode=mp.tasks.vision.RunningMode.VIDEO,
@@ -60,10 +71,21 @@ class MediaPipeHandTracker:
         self._landmarker = mp.tasks.vision.HandLandmarker.create_from_options(options)
         self._last_timestamp_ms = -1
 
-    def process(self, frame: CameraFrame) -> TrackingSnapshot:
+    def _prepare_image(self, frame: CameraFrame):
         import numpy as np
 
         rgb = np.frombuffer(frame.pixels, dtype=np.uint8).reshape(frame.height, frame.width, 3)
+        scale = getattr(self, '_image_scale', 1.0)
+        cv2 = getattr(self, '_cv2', None)
+        if scale < 1.0 and cv2 is not None:
+            target_w = max(1, int(round(frame.width * scale)))
+            target_h = max(1, int(round(frame.height * scale)))
+            if target_w != frame.width or target_h != frame.height:
+                rgb = cv2.resize(rgb, (target_w, target_h), interpolation=cv2.INTER_AREA)
+        return rgb
+
+    def process(self, frame: CameraFrame) -> TrackingSnapshot:
+        rgb = self._prepare_image(frame)
         image = self._mp.Image(image_format=self._mp.ImageFormat.SRGB, data=rgb)
         timestamp_ms = max(self._last_timestamp_ms + 1, int(frame.captured_at * 1000))
         self._last_timestamp_ms = timestamp_ms

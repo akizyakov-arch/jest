@@ -19,6 +19,7 @@
   "detection_confidence": 0.5,
   "presence_confidence": 0.5,
   "tracking_confidence": 0.5,
+  "tracking_scale": 0.8,
   "primary_hand": "FIRST",
   "pointer_mode": "PALM",
   "pointer_anchor": "PALM",

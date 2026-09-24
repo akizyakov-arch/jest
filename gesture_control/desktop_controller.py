@@ -60,8 +60,14 @@ class DesktopController:
     def _runtime(self, index):
         s = self.settings
         return TrackingRuntime(OpenCVCamera(index, s.camera_width, s.camera_height, s.camera_fps, s.camera_backend),
-            tracker_factory=lambda: MediaPipeHandTracker(self.model_path, s.max_hands, s.detection_confidence,
-                                                         s.presence_confidence, s.tracking_confidence))
+            tracker_factory=lambda: MediaPipeHandTracker(
+                self.model_path,
+                s.max_hands,
+                s.detection_confidence,
+                s.presence_confidence,
+                s.tracking_confidence,
+                image_scale=s.tracking_scale,
+            ))
 
     def submit(self, action, value=None):
         if not self.closing:

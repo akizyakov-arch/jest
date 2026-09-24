@@ -115,9 +115,14 @@ def run_preview(settings: Settings, model_path: Path, *, headless: bool = False,
 
     def create_runtime(index: int) -> TrackingRuntime:
         def create_tracker():
-            return MediaPipeHandTracker(model_path, settings.max_hands,
-                                       settings.detection_confidence, settings.presence_confidence,
-                                       settings.tracking_confidence)
+            return MediaPipeHandTracker(
+                model_path,
+                settings.max_hands,
+                settings.detection_confidence,
+                settings.presence_confidence,
+                settings.tracking_confidence,
+                image_scale=settings.tracking_scale,
+            )
         camera = OpenCVCamera(index, settings.camera_width, settings.camera_height,
                               settings.camera_fps, settings.camera_backend)
         return TrackingRuntime(camera, tracker_factory=create_tracker)

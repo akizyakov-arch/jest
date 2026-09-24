@@ -30,6 +30,7 @@ class Settings:
     detection_confidence: float = 0.5
     presence_confidence: float = 0.5
     tracking_confidence: float = 0.5
+    tracking_scale: float = 0.8
     primary_hand: str = "FIRST"
     pointer_mode: str = "PALM"
     pointer_anchor: str = "PALM"
@@ -130,6 +131,8 @@ class Settings:
                 raise ValueError(f"{name} must be an integer in 1..2000 ms")
         if type(self.debug) is not bool:
             raise ValueError("debug must be boolean")
+        if isinstance(self.tracking_scale, bool) or not isinstance(self.tracking_scale, (int, float)) or not 0.5 <= self.tracking_scale <= 1.0:
+            raise ValueError('tracking_scale must be a float in 0.5..1.0')
         if type(self.scroll_invert) is not bool:
             raise ValueError('scroll_invert must be boolean')
         for name in ('suppress_jitter', 'hide_windows_cursor', 'gesture_pointer', 'gesture_pinch', 'gesture_scroll', 'gesture_keyboard', 'gesture_cancel', 'gesture_middle', 'gesture_swipe', 'second_hand_enabled', 'gesture_workspace', 'precision_mode'):
